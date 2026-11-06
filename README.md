@@ -19,7 +19,7 @@ Dépenses Tracker vous aide à savoir où part votre argent, sans compte, sans s
 - **Verrouillage biométrique** : empreinte ou code de l'appareil.
 - **Sauvegarde optionnelle** : vers votre propre Google Drive, si vous le souhaitez.
 
-Application disponible sur Android. Publication sur Google Play à venir.
+Application disponible sur Android, sur Google Play : https://play.google.com/store/apps/details?id=com.mobenlamine.depensestracker
 
 ## Confidentialité
 
