@@ -676,78 +676,125 @@ a{color:#0E5A4C}a:hover{color:#063B30}
 .plan-note{margin:18px 0 0;font-size:13px;color:#6B746F}
 .igcta{display:inline-flex;align-items:center;gap:10px;color:#A9B3AE;text-decoration:none;font-size:15px;min-height:44px}
 .igcta:hover{color:#F2C14E}
-</style>
-<style>
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-.site-header{position:sticky;top:0;z-index:50;transition:background .25s,box-shadow .25s}
-.site-header.scrolled{background:rgba(16,22,20,.82)!important;backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
-.menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1px solid #2C3632;background:transparent;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:6px}
-.menu-btn span{display:block;width:18px;height:2px;border-radius:1px;background:#ECEFEC;transition:transform .2s}
-.menu-btn[aria-expanded="true"] span:first-child{transform:translateY(4px) rotate(45deg)}.menu-btn[aria-expanded="true"] span:last-child{transform:translateY(-4px) rotate(-45deg)}
-@media (max-width:760px){.menu-btn{display:inline-flex}
- .navlinks.open{display:flex!important;position:absolute;left:12px;right:12px;top:72px;flex-direction:column;align-items:stretch!important;gap:0!important;padding:8px;border-radius:18px;background:#141B18;border:1px solid #2C3632;box-shadow:0 20px 40px rgba(0,0,0,.4)}
- .navlinks.open .navlink{padding:14px 16px;border-radius:12px}
- .site-header nav{position:relative}}
-.split{display:flex;flex-wrap:wrap;align-items:center;gap:64px}
-.split-text{flex:1 1 440px;min-width:0}
-.steps{list-style:none;counter-reset:st;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:18px}
-.steps li{counter-increment:st;display:grid;grid-template-columns:44px 1fr;column-gap:16px}
-.steps li::before{content:counter(st);grid-row:span 2;width:44px;height:44px;border-radius:50%;background:#0E5A4C;color:#fff;display:flex;align-items:center;justify-content:center;font:700 18px 'Bricolage Grotesque',sans-serif}
-.steps b{font:600 18px 'Figtree',sans-serif;color:#16201D}.steps span{color:#4F5A55}
-.fine{margin:0;font-size:14px;color:#6B746F}
-.vphone{flex:0 1 360px;margin:0 auto;position:relative;border-radius:46px;padding:12px;background:#1B2421;box-shadow:0 40px 80px rgba(16,22,20,.28),0 0 0 2px #2A3531 inset}
-.vphone video{display:block;width:100%;aspect-ratio:9/16;border-radius:36px;background:#0B100E;object-fit:cover}
-.vsound{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:0;background:rgba(11,16,14,.78);color:#fff;font:600 14px 'Figtree',sans-serif;cursor:pointer;backdrop-filter:blur(8px)}
-.vsound[aria-pressed="true"]{opacity:.0;pointer-events:none;transition:opacity .4s}
-.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
-.how-card{position:relative;background:#F5F3EE;border:1px solid #E2DED4;border-radius:28px;padding:28px 28px 0;overflow:hidden;display:flex;flex-direction:column}
-.how-card h3{margin:14px 0 8px;font:700 22px 'Bricolage Grotesque',sans-serif;color:#16201D}.how-card p{margin:0 0 24px;color:#4F5A55}
-.how-n{width:40px;height:40px;border-radius:50%;background:#F2C14E;color:#221A00;display:flex;align-items:center;justify-content:center;font:700 18px 'Bricolage Grotesque',sans-serif}
-.shot{margin-top:auto;align-self:center;width:78%;height:330px;overflow:hidden;border-radius:30px 30px 0 0;background:#1B2421;padding:10px 10px 0;box-shadow:0 -10px 40px rgba(16,22,20,.12)}
-.shot img{display:block;width:100%;height:auto;border-radius:22px 22px 0 0}
-.insta{background:radial-gradient(900px 700px at 15% 100%,rgba(14,90,76,.55),transparent 70%),#101614;overflow:hidden}
-.insta-in{display:flex;flex-wrap:wrap;align-items:center;gap:56px;padding-top:112px;padding-bottom:112px}
-.ig-btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;background:#F2C14E;color:#221A00;font-weight:700;text-decoration:none}
-.insta-tiles{flex:1 1 380px;position:relative;height:440px;min-width:0}
-.insta-tiles img{position:absolute;border-radius:22px;box-shadow:0 30px 60px rgba(0,0,0,.5);height:auto}
-.insta-tiles .t1{width:46%;left:6%;top:60px;transform:rotate(-6deg)}.insta-tiles .t2{width:40%;right:8%;top:0;transform:rotate(5deg)}
-@media (max-width:760px){.site-header nav>div{gap:10px!important}.site-header nav>a span{white-space:nowrap;font-size:17px!important}}
-@media (max-width:440px){.dl-t{display:none}.site-header nav>div>a:last-child{padding:0 13px!important}}
-@media (max-width:760px){.insta-tiles{height:360px}.shot{height:280px}}
+</style><style>
+html{scroll-behavior:smooth}section[id]{scroll-margin-top:84px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:3px solid #F2C14E;outline-offset:3px;border-radius:6px}
+.hdr{position:fixed;top:0;left:0;right:0;z-index:90;background:rgba(16,22,20,.78);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);border-bottom:1px solid rgba(255,255,255,.07);transition:background .2s}
+.hdr.solid{background:rgba(16,22,20,.94)}
+.hdr-space{height:76px;background:#101614}
+.menubtn{display:none;width:44px;height:44px;border-radius:12px;border:1px solid #2C3632;background:transparent;color:#ECEFEC;align-items:center;justify-content:center;cursor:pointer}
+.mnav{display:flex;flex-direction:column;padding:8px 16px 16px;border-top:1px solid rgba(255,255,255,.07)}
+.mnav a{color:#ECEFEC;text-decoration:none;font-weight:600;padding:14px 8px;border-bottom:1px solid rgba(255,255,255,.06)}
+@media (max-width:760px){.menubtn{display:inline-flex}}
+@media (max-width:760px){.hdr .dl{display:none!important}}
+.proof{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 20px;color:#A9B3AE;font-size:15px}
+.proof li{display:flex;align-items:center;gap:6px}.proof svg{width:18px;height:18px;color:#7BE3B8}
 .chipf{animation:floaty 6s ease-in-out infinite}.chipf+.chipf{animation-delay:-3s}
-@keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -10px}}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
-.fcard,.plan{transition:transform .25s ease,box-shadow .25s ease}.fcard:hover,.plan:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(16,22,20,.10)}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.chipf{animation:none}.fcard:hover,.plan:hover{transform:none}}
+@keyframes floaty{50%{transform:translateY(-10px)}}
+.fcard,.bcard,.plan,.steps li{transition:transform .25s ease,box-shadow .25s ease,border-color .25s}
+.fcard:hover,.bcard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(22,32,29,.10);border-color:#CFC9BC}
+.badge img,.plan-btn,.pill{transition:transform .15s ease}.badge:hover img,.plan-btn:hover,.pill:hover{transform:translateY(-2px)}
+/* à la une */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.bcard{grid-column:span 6;background:#FFFFFF;border:1px solid #E2DED4;border-radius:28px;padding:32px;display:flex;flex-direction:column;gap:24px;min-width:0}
+.b-wide{grid-column:span 7}.b-dark{grid-column:span 5;background:#101614;border-color:#2C3632;color:#ECEFEC}
+.bcard:nth-child(3){grid-column:span 5}.b-saf{grid-column:span 7;background:#F5E2C8;border-color:#EAD2AE}
+.btxt h3{margin:0 0 8px;font-weight:700;font-size:clamp(22px,2.4vw,28px);line-height:1.15;letter-spacing:-.01em}
+.btxt p{margin:0;color:#4F5A55;font-size:16px}.b-dark .btxt p{color:#A9B3AE}.b-saf .btxt p{color:#5A4520}
+.bviz{margin-top:auto}
+.gauges{display:flex;flex-direction:column;gap:14px}
+.g{background:#F5F3EE;border-radius:16px;padding:14px 16px}
+.gh{display:flex;justify-content:space-between;font-size:16px}.gh span{font:600 14px 'IBM Plex Mono',monospace}
+.gs{font-size:13px;color:#4F5A55}.gb{height:8px;border-radius:4px;background:#E2DED4;margin:8px 0 6px;overflow:hidden}
+.gb i{display:block;height:100%;border-radius:4px;transform-origin:left;transform:scaleX(var(--k,1));transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.gn{font-size:13px;font-weight:600}
+.proj .pn{display:flex;justify-content:space-between;align-items:baseline}.proj .pn span{font:500 13px 'IBM Plex Mono',monospace;color:#85908A;text-transform:uppercase;letter-spacing:.08em}
+.proj .pn b{font:800 40px/1 'Bricolage Grotesque',sans-serif;color:#F2C14E}.proj .pn small{font:500 15px 'Figtree',sans-serif;color:#A9B3AE}
+.proj svg{width:100%;height:170px;margin:14px 0 10px;display:block}
+.proj .pl{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#85908A}
+.proj .pl em{font-style:normal;font-weight:700;background:#3B1A17;color:#FFB4AB;padding:4px 12px;border-radius:999px}
+.ring{display:flex;align-items:center;gap:20px}.ring svg{width:120px;height:120px;flex:none}
+.ring b{display:block;font-size:18px}.ring span{color:#4F5A55;font-size:15px}
+.mad{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.mad b{font:800 clamp(44px,6vw,76px)/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;color:#3A2A08;font-variant-numeric:tabular-nums}
+.mad span{font:600 20px 'IBM Plex Mono',monospace;color:#6E4500}
+@media (max-width:900px){.bcard,.b-wide,.b-dark,.b-saf,.bcard:nth-child(3){grid-column:span 12}.bcard{padding:24px}}
+/* étapes */
+.steps{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}
+.steps li{background:#F5F3EE;border:1px solid #E2DED4;border-radius:24px;padding:28px}
+.sn{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:#0E5A4C;color:#fff;font:700 22px 'Bricolage Grotesque',sans-serif;margin-bottom:18px}
+.steps h3{margin:0 0 6px;font-size:22px;font-weight:700}.steps p{margin:0;color:#4F5A55;font-size:16px}
+/* comparaison */
+.cmpwrap{border:1px solid #E2DED4;border-radius:24px;overflow:hidden;background:#FFFFFF}
+.cmp{width:100%;border-collapse:collapse;font-size:16px}
+.cmp th,.cmp td{padding:16px 20px;text-align:left;vertical-align:top;border-top:1px solid #ECE9E1}
+.cmp thead th{border-top:0;font:700 16px 'Figtree',sans-serif;color:#4F5A55;background:#FAF9F5}
+.cmp thead .us{color:#16201D}.cmp thead img{width:28px;height:28px;border-radius:8px;vertical-align:-8px;margin-right:10px}
+.cmp tbody th{font-weight:600;width:26%;color:#16201D}
+.cmp .us{background:#EEF6F2}.cmp td{color:#4F5A55}.cmp td.us{color:#16201D;font-weight:600}
+.cmp .y,.cmp .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;margin-right:10px;vertical-align:-6px}
+.cmp .y{background:#0E5A4C;color:#fff}.cmp .n{background:#F9E1DE;color:#A22B23}.cmp .y svg,.cmp .n svg{width:14px;height:14px;stroke-width:3}
+@media (max-width:700px){.cmp,.cmp tbody,.cmp tr,.cmp td,.cmp th{display:block}.cmp thead{display:none}
+ .cmp tbody tr{border-top:1px solid #ECE9E1;padding:14px 16px}.cmp tbody tr:first-child{border-top:0}
+ .cmp tbody th{width:auto;padding:0 0 8px;border:0;font-size:17px}.cmp td{border:0;padding:8px 12px;border-radius:12px;margin-top:6px;font-size:15px}.cmp td:not(.us){background:#FAF9F5}}
+/* série + histoire */
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.serie,.story{border-radius:28px;padding:36px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.serie{color:#ECEFEC;background:radial-gradient(700px 500px at 90% 100%,rgba(14,90,76,.6),transparent 70%),#101614}
+.story{background:#FFFFFF;border:1px solid #E2DED4}
+.serie h2,.story h2{margin:0;font-weight:800;font-size:clamp(28px,3.4vw,40px);line-height:1.05;letter-spacing:-.02em}
+.serie h2{color:#F2C14E}.serie p{margin:0;color:#A9B3AE}
+.days{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.days li{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.09);border-radius:999px;padding:6px 14px 6px 8px;font-size:14px}
+.days span{font:600 12px 'IBM Plex Mono',monospace;color:#F2C14E;background:rgba(242,193,78,.14);border-radius:999px;padding:2px 8px}
+.days .more{color:#85908A;border-style:dashed}
+.serie .plan-btn{gap:10px;margin-top:6px}
+.tl{list-style:none;margin:4px 0 0;padding:0 0 0 22px;border-left:2px solid #E2DED4;display:flex;flex-direction:column;gap:20px}
+.tl li{position:relative}.tl li::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:#0E5A4C;box-shadow:0 0 0 4px #fff}
+.tl li:last-child::before{background:#F2C14E}
+.tl b{display:block;font:700 19px 'Bricolage Grotesque',sans-serif}.tl span{color:#4F5A55;font-size:16px}
+.sig{margin:auto 0 0;padding-top:8px;font-size:15px;color:#6B746F}
+/* barre mobile */
+.mcta{display:none}
+@media (max-width:760px){.mcta{font-family:'Figtree',system-ui,sans-serif;position:fixed;left:12px;right:12px;bottom:12px;z-index:95;display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:18px;background:rgba(16,22,20,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid #2C3632;color:#ECEFEC;text-decoration:none;box-shadow:0 16px 40px rgba(0,0,0,.35);transform:translateY(140%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+ .mcta.on{transform:none}.mcta img{border-radius:10px}.mcta span{flex:1;font-size:13px;color:#A9B3AE;line-height:1.3}.mcta b{display:block;font-size:15px;color:#ECEFEC}
+ .mcta em{font-style:normal;font-weight:700;background:#F2C14E;color:#221A00;border-radius:999px;padding:10px 18px;font-size:15px}
+ .mcta:hover{color:#ECEFEC} footer{padding-bottom:84px}}
+/* apparition au défilement (uniquement si JavaScript est actif) */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+.js .rv.in{opacity:1;transform:none}
+.js .gauges:not(.in) .gb i{--k:0}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{opacity:1;transform:none;transition:none}.chipf{animation:none}.js .gauges:not(.in) .gb i{--k:1}}
 </style>
-<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
 <div class="site" data-canvas-width="1440" data-canvas-height="7600" data-document-role="page" data-label="Page d'accueil">
 
 <!-- ===== Navigation ===== -->
-<header class="site-header" style="background: #101614">
+<header class="hdr" id="hdr">
 <nav class="wrap" aria-label="Navigation principale" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 16px; padding-bottom: 16px">
 <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #ECEFEC; min-height: 44px">
 <img src="assets/icon.png" alt="" width="40" height="40" style="width: 40px; height: 40px; border-radius: 11px">
 <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 19px">Dépenses Tracker</span>
 </a>
 <div style="display: flex; align-items: center; gap: 28px">
-<button type="button" class="menu-btn" aria-expanded="false" aria-controls="navlinks" aria-label="Ouvrir le menu"><span></span><span></span></button>
-<div class="navlinks" id="navlinks" style="display: flex; align-items: center; gap: 28px">
-<a class="navlink" href="#action">En action</a>
-<a class="navlink" href="#essayer">Démo</a>
+<div class="navlinks" style="display: flex; align-items: center; gap: 28px">
+<a class="navlink" href="#essayer">Essayer</a>
 <a class="navlink" href="#fonctions">Fonctions</a>
+<a class="navlink" href="#pourquoi">Pourquoi</a>
 <a class="navlink" href="#tarifs">Tarifs</a>
 <a class="navlink" href="#confidentialite">Confidentialité</a>
 <a class="navlink" href="#faq">Questions</a>
 </div>
-<a aria-label="Télécharger sur Google Play" href="https://play.google.com/store/apps/details?id=com.mobenlamine.depensestracker" style="background: #F2C14E; color: #221A00; text-decoration: none; padding: 0 18px; border-radius: 999px; font-weight: 700; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; gap: 8px"><svg xmlns="http://www.w3.org/2000/svg" class="io" aria-hidden="true" width="18" height="18" viewBox="0 0 512 512"><path d="M336 176h40a40 40 0 0140 40v208a40 40 0 01-40 40H136a40 40 0 01-40-40V216a40 40 0 0140-40h40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M176 272l80 80 80-80M256 48v288"></path></svg><span class="dl-t">Télécharger</span></a>
+<button type="button" id="menuBtn" class="menubtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mnav"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<a href="https://play.google.com/store/apps/details?id=com.mobenlamine.depensestracker" class="dl" style="background: #F2C14E; color: #221A00; text-decoration: none; padding: 0 18px; border-radius: 999px; font-weight: 700; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; gap: 8px"><svg xmlns="http://www.w3.org/2000/svg" class="io" aria-hidden="true" width="18" height="18" viewBox="0 0 512 512"><path d="M336 176h40a40 40 0 0140 40v208a40 40 0 01-40 40H136a40 40 0 01-40-40V216a40 40 0 0140-40h40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M176 272l80 80 80-80M256 48v288"></path></svg>Télécharger</a>
 </div>
 </nav>
+<div id="mnav" class="mnav" hidden><a href="#essayer">Essayer la démo</a><a href="#fonctions">Fonctions</a><a href="#pourquoi">Pourquoi elle est différente</a><a href="#tarifs">Tarifs</a><a href="#confidentialite">Confidentialité</a><a href="#faq">Questions</a></div>
 </header>
+<div class="hdr-space"></div>
 
 <!-- ===== Hero ===== -->
 <section id="top" style="color: #ECEFEC; padding-bottom: 96px; background: radial-gradient(900px 700px at 85% 95%, rgba(14,90,76,.55), transparent 70%), #101614">
@@ -764,7 +811,7 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 <a class="badge" href="https://play.google.com/store/apps/details?id=com.mobenlamine.depensestracker" aria-label="Disponible sur Google Play"><img src="assets/badge-google-play-fr.png" alt="Disponible sur Google Play"></a>
 <a href="#essayer" style="display: inline-flex; align-items: center; gap: 10px; min-height: 58px; padding: 0 24px; border-radius: 14px; border: 1px solid #2C3632; color: #ECEFEC; text-decoration: none; font-weight: 600; box-sizing: border-box"><svg xmlns="http://www.w3.org/2000/svg" class="io" aria-hidden="true" width="20" height="20" viewBox="0 0 512 512"><path d="M80 320V144a32 32 0 0132-32h0a32 32 0 0132 32v112M144 256V80a32 32 0 0132-32h0a32 32 0 0132 32v160M272 241V96a32 32 0 0132-32h0a32 32 0 0132 32v224M208 240V48a32 32 0 0132-32h0a32 32 0 0132 32v192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path><path d="M80 320c0 117.4 64 176 152 176s123.71-39.6 144-88l52.71-144c6.66-18.05 3.64-34.79-11.87-43.6h0c-15.52-8.82-35.91-4.28-44.31 11.68L336 320" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path></svg>Essayer la démo</a>
 </div>
-<p class="eyebrow" style="margin: 28px 0 0; color: #85908A; font-size: 12px">Android · Gratuit · Sans abonnement · Montants en MAD</p>
+<ul class="proof"><li><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Gratuit</li><li><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sans compte</li><li><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>En français</li><li><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Montants en MAD</li></ul>
 </div>
 <div style="flex: 1 1 404px; min-width: 0; display: flex; justify-content: center; position: relative">
 <div class="chipf" style="left: -24px; top: 220px">
@@ -807,42 +854,6 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 <div class="promise"><span class="ico" style="background: #D8EAE3; color: #0E5A4C"><svg xmlns="http://www.w3.org/2000/svg" class="io" aria-hidden="true" width="24" height="24" viewBox="0 0 512 512"><path d="M376 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path><path d="M288 304c-87 0-175.3 48-191.64 138.6-2 10.92 4.21 21.4 15.65 21.4H464c11.44 0 17.62-10.48 15.65-21.4C463.3 352 375 304 288 304z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M144 232H32"></path></svg></span><div><b>Aucun compte</b><span>Pas d'inscription, pas d'e-mail, pas de mot de passe.</span></div></div>
 <div class="promise"><span class="ico" style="background: #D8EAE3; color: #0E5A4C"><svg xmlns="http://www.w3.org/2000/svg" class="io" aria-hidden="true" width="24" height="24" viewBox="0 0 512 512"><circle cx="256" cy="256" r="208" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></circle><path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" d="M108.92 108.92l294.16 294.16"></path></svg></span><div><b>Zéro publicité</b><span>Ni bannière, ni pistage publicitaire.</span></div></div>
 <div class="promise"><span class="ico" style="background: #D8EAE3; color: #0E5A4C"><svg xmlns="http://www.w3.org/2000/svg" class="io" aria-hidden="true" width="24" height="24" viewBox="0 0 512 512"><path d="M390.42 75.28a10.45 10.45 0 01-5.32-1.44C340.72 50.08 302.35 40 256.35 40c-45.77 0-89.23 11.28-128.76 33.84C122 77 115.11 74.8 111.87 69a12.4 12.4 0 014.63-16.32A281.81 281.81 0 01256.35 16c49.23 0 92.23 11.28 139.39 36.48a12 12 0 014.85 16.08 11.3 11.3 0 01-10.17 6.72zm-330.79 126a11.73 11.73 0 01-6.7-2.16 12.26 12.26 0 01-2.78-16.8c22.89-33.6 52-60 86.69-78.48 72.58-38.84 165.51-39.12 238.32-.24 34.68 18.48 63.8 44.64 86.69 78a12.29 12.29 0 01-2.78 16.8 11.26 11.26 0 01-16.18-2.88c-20.8-30.24-47.15-54-78.36-70.56-66.34-35.28-151.18-35.28-217.29.24-31.44 16.8-57.79 40.8-78.59 71a10 10 0 01-9.02 5.08zM204.1 491a10.66 10.66 0 01-8.09-3.6C175.9 466.48 165 453 149.55 424c-16-29.52-24.27-65.52-24.27-104.16 0-71.28 58.71-129.36 130.84-129.36S387 248.56 387 319.84a11.56 11.56 0 11-23.11 0c0-58.08-48.32-105.36-107.72-105.36S148.4 261.76 148.4 319.84c0 34.56 7.39 66.48 21.49 92.4 14.8 27.6 25 39.36 42.77 58.08a12.67 12.67 0 010 17 12.44 12.44 0 01-8.56 3.68zm165.75-44.4c-27.51 0-51.78-7.2-71.66-21.36a129.1 129.1 0 01-55-105.36 11.57 11.57 0 1123.12 0 104.28 104.28 0 0044.84 85.44c16.41 11.52 35.6 17 58.72 17a147.41 147.41 0 0024-2.4c6.24-1.2 12.25 3.12 13.4 9.84a11.92 11.92 0 01-9.47 13.92 152.28 152.28 0 01-27.95 2.88zM323.38 496a13 13 0 01-3-.48c-36.76-10.56-60.8-24.72-86-50.4-32.37-33.36-50.16-77.76-50.16-125.28 0-38.88 31.9-70.56 71.19-70.56s71.2 31.68 71.2 70.56c0 25.68 21.5 46.56 48.08 46.56s48.08-20.88 48.08-46.56c0-90.48-75.13-163.92-167.59-163.92-65.65 0-125.75 37.92-152.79 96.72-9 19.44-13.64 42.24-13.64 67.2 0 18.72 1.61 48.24 15.48 86.64 2.32 6.24-.69 13.2-6.7 15.36a11.34 11.34 0 01-14.79-7 276.39 276.39 0 01-16.88-95c0-28.8 5.32-55 15.72-77.76 30.75-67 98.94-110.4 173.6-110.4 105.18 0 190.71 84.24 190.71 187.92 0 38.88-31.9 70.56-71.2 70.56s-71.2-31.68-71.2-70.56c.01-25.68-21.49-46.6-48.07-46.6s-48.08 20.88-48.08 46.56c0 41 15.26 79.44 43.23 108.24 22 22.56 43 35 75.59 44.4 6.24 1.68 9.71 8.4 8.09 14.64a11.39 11.39 0 01-10.87 9.16z"></path></svg></span><div><b>Verrouillée</b><span>Empreinte ou code de l'appareil à l'ouverture.</span></div></div>
-</div>
-</section>
-
-
-<!-- ===== En action (vidéo) ===== -->
-<section id="action" class="wrap" style="padding-top: 112px; padding-bottom: 112px">
-<div class="split">
-<div class="split-text rv">
-<p class="eyebrow" style="margin: 0 0 16px; color: #946000">En 20 secondes</p>
-<h2 class="h2">Un ticket. Une photo.<br>C'est enregistré.</h2>
-<p class="lead">Pas besoin de tout taper. Photographiez votre ticket de caisse : Dépenses Tracker le lit sur le téléphone, même en mode avion.</p>
-<ol class="steps">
-<li><b>Photographiez le ticket</b><span>Ou choisissez une capture depuis la galerie.</span></li>
-<li><b>L'app lit tout</b><span>Montant, magasin, date, catégorie et chaque article.</span></li>
-<li><b>Vérifiez, enregistrez</b><span>Vous corrigez si besoin, et l'app apprend de vos corrections.</span></li>
-</ol>
-<p class="fine">3 scans par mois en gratuit, illimités avec Premium.</p>
-</div>
-<div class="vphone rv">
-<video id="actVideo" src="assets/video/scan-recu.mp4" poster="assets/video/scan-recu-poster.jpg" muted loop playsinline preload="none" aria-label="Démonstration : scanner un ticket de caisse avec Dépenses Tracker"></video>
-<button type="button" class="vsound" id="vSound" aria-pressed="false"><svg viewBox="0 0 512 512" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M232 416a23.88 23.88 0 01-14.2-4.68 8.27 8.27 0 01-.66-.51L125.76 336H56a24 24 0 01-24-24V200a24 24 0 0124-24h69.75l91.37-74.81a8.27 8.27 0 01.66-.51A24 24 0 01256 120v272a24 24 0 01-24 24z"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="32" d="M320 320c9.74-19.38 16-40.84 16-64 0-23.48-6-44.42-16-64M368 368c19.48-33.92 32-64.06 32-112s-12-77.74-32-112"/></svg><span>Activer le son</span></button>
-</div>
-</div>
-</section>
-
-<!-- ===== Comment ça marche ===== -->
-<section id="comment" style="background: #FFFFFF; border-top: 1px solid #E2DED4; border-bottom: 1px solid #E2DED4">
-<div class="wrap" style="padding-top: 112px; padding-bottom: 112px">
-<p class="eyebrow rv" style="margin: 0 0 16px; color: #946000">Comment ça marche</p>
-<h2 class="h2 rv">Trois gestes, et votre mois est clair.</h2>
-<p class="lead rv">Les écrans ci-dessous sont ceux de l'application, avec des données d'exemple.</p>
-<div class="how">
-<article class="how-card rv"><span class="how-n">1</span><h3>Notez ou scannez</h3><p>Une dépense en quelques secondes, ou la photo du ticket : tout est lu sur le téléphone.</p><div class="shot"><img src="assets/screens/scan-verifier.webp" alt="Écran « Vérifier le reçu » : montant, commerçant, catégorie, date et articles extraits du ticket" width="414" height="868" loading="lazy" decoding="async"></div></article>
-<article class="how-card rv"><span class="how-n">2</span><h3>Fixez vos budgets</h3><p>Un budget par catégorie. L'app vous prévient à 80 % et au dépassement, et calcule le reste par jour.</p><div class="shot"><img src="assets/screens/budgets.webp" alt="Écran Budgets : dépensé du mois, jours restants, reste par jour et jauges par catégorie" width="384" height="855" loading="lazy" decoding="async"></div></article>
-<article class="how-card rv"><span class="how-n">3</span><h3>Comprenez vos habitudes</h3><p>Tendances, catégories les plus coûteuses, jours les plus dépensiers et projection de fin de mois.</p><div class="shot"><img src="assets/screens/analyses.webp" alt="Écran Analyses : revenus et dépenses, répartition par catégorie et repères" width="384" height="855" loading="lazy" decoding="async"></div></article>
-</div>
 </div>
 </section>
 
@@ -975,6 +986,56 @@ html{scroll-behavior:smooth;scroll-padding-top:84px}
 </section>
 
 <!-- ===== Fonctions ===== -->
+
+<!-- ===== À la une ===== -->
+<section id="alaune" class="wrap" style="padding-top: 112px; padding-bottom: 112px">
+<p class="eyebrow" style="margin: 0 0 16px; color: #946000">Ce qui change tout</p>
+<h2 class="h2">Elle ne se contente pas de compter. Elle prévient.</h2>
+<p class="lead">La plupart des applis vous montrent ce que vous avez déjà dépensé. Dépenses Tracker vous dit aussi ce qui arrive, à temps pour réagir.</p>
+<div class="bento">
+<article class="bcard b-wide">
+<div class="btxt"><h3>Vos budgets vous préviennent avant de déborder</h3><p>Une alerte à 80 %, une autre au dépassement, et ce qu'il vous reste à dépenser par jour jusqu'à la fin du mois.</p></div>
+<div class="bviz gauges">
+<div class="g"><div class="gh"><b>Restaurants</b><span style="color:#A22B23">124 %</span></div><div class="gs">1 240 / 1 000 MAD</div><div class="gb"><i style="width:100%;background:#A22B23"></i></div><div class="gn" style="color:#A22B23">Dépassé de 240 MAD</div></div>
+<div class="g"><div class="gh"><b>Courses</b><span style="color:#C98A12">86 %</span></div><div class="gs">1 720 / 2 000 MAD</div><div class="gb"><i style="width:86%;background:#C98A12"></i></div><div class="gn" style="color:#6B4300">Attention : 280 MAD restants</div></div>
+<div class="g"><div class="gh"><b>Transport</b><span style="color:#0E5A4C">65 %</span></div><div class="gs">780 / 1 200 MAD</div><div class="gb"><i style="width:65%;background:#0E5A4C"></i></div><div class="gn" style="color:#4F5A55">420 MAD restants</div></div>
+</div>
+</article>
+<article class="bcard b-dark">
+<div class="btxt"><h3>La fin du mois, dès le 10</h3><p>À partir de votre rythme, l'app projette où vous finirez le mois.</p></div>
+<div class="bviz proj">
+<div class="pn"><span>Projection</span><b>7 482 <small>MAD</small></b></div>
+<svg viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 104 L40 96 L80 90 L120 74 L160 66" fill="none" stroke="#7BE3B8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M160 66 L320 14" fill="none" stroke="#F2C14E" stroke-width="3" stroke-dasharray="6 7" stroke-linecap="round"/><line x1="0" y1="40" x2="320" y2="40" stroke="rgba(255,255,255,.22)" stroke-dasharray="2 6"/><circle cx="160" cy="66" r="6" fill="#7BE3B8"/></svg>
+<div class="pl"><span>Budget : 5 800</span><em>Dépassement prévu</em></div>
+</div>
+</article>
+<article class="bcard">
+<div class="btxt"><h3>Un objectif, une jauge</h3><p>Fixez un montant, liez-le à un compte : la progression suit votre épargne, avec un mot d'encouragement à chaque palier.</p></div>
+<div class="bviz ring">
+<svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#EFECE4" stroke-width="12"/><circle cx="60" cy="60" r="50" fill="none" stroke="#0E5A4C" stroke-width="12" stroke-linecap="round" stroke-dasharray="150.8 314.2" transform="rotate(-90 60 60)"/><text x="60" y="67" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="26" fill="#16201D">48 %</text></svg>
+<div><b>Voyage été 2027</b><span>4 800 / 10 000 MAD</span></div>
+</div>
+</article>
+<article class="bcard b-saf">
+<div class="btxt"><h3>Pensée en dirhams</h3><p>Montants, budgets, rapports : tout est en MAD, écrit comme au Maroc. Rien à configurer.</p></div>
+<div class="bviz mad"><b>40 793,51</b><span>MAD</span></div>
+</article>
+</div>
+</section>
+
+<!-- ===== Trois gestes ===== -->
+<section style="background: #FFFFFF; border-top: 1px solid #E2DED4; border-bottom: 1px solid #E2DED4">
+<div class="wrap" style="padding-top: 96px; padding-bottom: 96px">
+<p class="eyebrow" style="margin: 0 0 16px; color: #946000">Prête en une minute</p>
+<h2 class="h2">Trois gestes, et c'est parti.</h2>
+<ol class="steps">
+<li><span class="sn">1</span><h3>Installez</h3><p>Gratuit sur Google Play. Pas d'inscription, pas d'e-mail : l'app s'ouvre et elle est prête.</p></li>
+<li><span class="sn">2</span><h3>Notez ou scannez</h3><p>Une dépense se saisit en quelques secondes. Ou prenez le ticket en photo : montant, magasin et date sont lus pour vous.</p></li>
+<li><span class="sn">3</span><h3>Gardez le cap</h3><p>Fixez vos budgets. L'app vous alerte avant le dépassement et vous montre où part votre argent.</p></li>
+</ol>
+</div>
+</section>
+
 <section id="fonctions" style="background: #EFECE4">
 <div class="wrap" style="padding-top: 112px; padding-bottom: 112px">
 <p class="eyebrow" style="margin: 0 0 16px; color: #946000">Fonctions</p>
@@ -1043,11 +1104,24 @@ TOTAL         342,80</div>
 <div class="model"><img src="assets/hugging-face.svg" alt="" style="width: 26px; height: 26px">Gemma 2 2B</div>
 <div class="model"><img src="assets/hugging-face.svg" alt="" style="width: 26px; height: 26px">Phi-3.5 mini</div>
 </div>
-<p class="eyebrow" style="margin: 0; font-size: 11px; color: #6E4500; display: flex; align-items: center; gap: 8px"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M318.586 363.5L256 424l-62.586-60.5S212 336 256 336s62.586 27.5 62.586 27.5zM407.31 278L372 312s-41-46-116-46-116 46-116 46l-35.31-34S142.5 214 256 214s151.31 64 151.31 64z" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"></path><path d="M496 192l-36.69 35.5S386.5 141 256 141 52.69 227.5 52.69 227.5L16 192S88 88 256 88s240 104 240 104z" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"></path></svg>Wi-Fi conseillé pour le téléchargement</p>
+<p class="eyebrow" style="margin: 0; font-size: 11px; color: #6E4500; display: flex; align-items: center; gap: 8px"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18" style="flex:none"><path d="M318.586 363.5L256 424l-62.586-60.5S212 336 256 336s62.586 27.5 62.586 27.5zM407.31 278L372 312s-41-46-116-46-116 46-116 46l-35.31-34S142.5 214 256 214s151.31 64 151.31 64z" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"></path><path d="M496 192l-36.69 35.5S386.5 141 256 141 52.69 227.5 52.69 227.5L16 192S88 88 256 88s240 104 240 104z" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"></path></svg>Wi-Fi conseillé pour le téléchargement</p>
 </article>
 </div>
 </section>
 
+
+
+<!-- ===== Comparaison ===== -->
+<section id="pourquoi" class="wrap" style="padding-top: 112px; padding-bottom: 112px">
+<p class="eyebrow" style="margin: 0 0 16px; color: #946000">Pourquoi elle est différente</p>
+<h2 class="h2">Votre budget ne regarde que vous.</h2>
+<p class="lead">Beaucoup d'applis de budget vivent de vos données ou d'un abonnement. Celle-ci a fait d'autres choix.</p>
+<div class="cmpwrap"><table class="cmp">
+<thead><tr><th scope="col"><span class="vh">Critère</span></th><th scope="col" class="us"><img src="assets/icon.png" alt="" width="28" height="28">Dépenses Tracker</th><th scope="col">Applis de budget classiques</th></tr></thead>
+<tbody><tr><th scope="row">Créer un compte</th><td class="us"><span class="y"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Jamais</td><td><span class="n"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 6l12 12M18 6L6 18"/></svg></span>Souvent obligatoire</td></tr><tr><th scope="row">Où vont vos données</th><td class="us"><span class="y"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Elles restent sur votre téléphone</td><td><span class="n"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 6l12 12M18 6L6 18"/></svg></span>Sur les serveurs de l'éditeur</td></tr><tr><th scope="row">Sans Internet</th><td class="us"><span class="y"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Tout fonctionne</td><td><span class="n"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 6l12 12M18 6L6 18"/></svg></span>Limité ou impossible</td></tr><tr><th scope="row">Publicité</th><td class="us"><span class="y"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Aucune</td><td><span class="n"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 6l12 12M18 6L6 18"/></svg></span>Fréquente en version gratuite</td></tr><tr><th scope="row">Paiement</th><td class="us"><span class="y"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Gratuit, Premium en une fois</td><td><span class="n"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 6l12 12M18 6L6 18"/></svg></span>Souvent un abonnement mensuel</td></tr><tr><th scope="row">Dirham marocain</th><td class="us"><span class="y"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Prévu dès le départ</td><td><span class="n"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 6l12 12M18 6L6 18"/></svg></span>Devise à régler soi-même</td></tr><tr><th scope="row">Intelligence artificielle</th><td class="us"><span class="y"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Sur l'appareil, rien n'est envoyé</td><td><span class="n"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M6 6l12 12M18 6L6 18"/></svg></span>Dans le cloud</td></tr></tbody>
+</table></div>
+<p class="plan-note">Comparaison générale avec les pratiques courantes des applications de budget ; chaque application est différente.</p>
+</section>
 
 <!-- ===== Tarifs ===== -->
 <section id="tarifs" style="background: #EFECE4">
@@ -1098,19 +1172,26 @@ TOTAL         342,80</div>
 </section>
 
 
-<!-- ===== Instagram ===== -->
-<section id="instagram" class="insta">
-<div class="wrap insta-in">
-<div class="rv" style="flex: 1 1 420px; min-width: 0">
-<p class="eyebrow" style="margin: 0 0 16px; color: #F2C14E">Sur Instagram</p>
-<h2 class="h2" style="color: #ECEFEC">One Day,<br><span style="color: #F2C14E">One Feature.</span></h2>
-<p class="lead" style="color: #A9B3AE">Chaque jour, une fonctionnalité de l'application en moins de 30 secondes, montrée dans la vraie interface. Un jour gratuit, un jour Premium.</p>
-<a class="ig-btn" href="https://www.instagram.com/depenses_tracker/"><svg viewBox="0 0 512 512" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z"/><path fill="currentColor" d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z"/></svg>Suivre @depenses_tracker</a>
-</div>
-<div class="insta-tiles rv" aria-hidden="true">
-<img class="t1" src="assets/screens/insta-serie.webp" alt="" width="540" height="675" loading="lazy" decoding="async">
-<img class="t2" src="assets/screens/insta-jour1.webp" alt="" width="540" height="960" loading="lazy" decoding="async">
-</div>
+<!-- ===== Série + histoire ===== -->
+<section class="wrap" style="padding-top: 112px; padding-bottom: 112px">
+<div class="duo">
+<article class="serie">
+<p class="eyebrow" style="margin: 0; color: #F2C14E">Sur Instagram</p>
+<h2>One Day, One Feature.</h2>
+<p>Chaque jour, une fonctionnalité de l'app montrée en moins de 30 secondes, dans la vraie interface.</p>
+<ol class="days"><li><span>01</span>Scan de reçus</li><li><span>02</span>Analyse IA du mois</li><li><span>03</span>100 % hors ligne</li><li><span>04</span>L'IA sur le téléphone</li><li><span>05</span>Saisie vocale</li><li><span>06</span>Comptes illimités</li><li><span>07</span>Budgets par catégorie</li><li class="more"><span>…</span>et la suite, chaque jour</li></ol>
+<a class="plan-btn" href="https://www.instagram.com/depenses_tracker/"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 512 512" width="18" height="18"><path fill="currentColor" d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z"/><path fill="currentColor" d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z"/></svg>Suivre @depenses_tracker</a>
+</article>
+<article class="story">
+<p class="eyebrow" style="margin: 0; color: #946000">L'histoire</p>
+<h2>Une appli faite au Maroc, par une seule personne.</h2>
+<ol class="tl">
+<li><b>Juin 2026</b><span>L'idée : une appli de budget en dirhams, qui marche sans connexion et ne demande rien.</span></li>
+<li><b>Tout l'été</b><span>Conception, développement et tests, écran par écran.</span></li>
+<li><b>Automne 2026</b><span>Sortie sur Google Play, gratuite, avec Premium en achat unique.</span></li>
+</ol>
+<p class="sig">Mohammed Benlamine, créateur de Dépenses Tracker</p>
+</article>
 </div>
 </section>
 
@@ -1124,6 +1205,8 @@ TOTAL         342,80</div>
 <details class="faq"><summary>Combien coûte l'application ?</summary><p>Elle est gratuite. Premium est en option : 79,99 MAD, payés une seule fois sur Google Play. Ce n'est pas un abonnement, et les fonctions Premium à venir sont déjà comprises.</p></details>
 <details class="faq"><summary>Que se passe-t-il si je change de téléphone ?</summary><p>Avec Premium, faites une sauvegarde vers votre Google Drive ou exportez vos données, puis restaurez-les sur le nouvel appareil.</p></details>
 <details class="faq"><summary>Et si je désinstalle l'application ?</summary><p>Vos données sont supprimées avec elle. Si vous avez Premium, faites une sauvegarde ou un export avant.</p></details>
+<details class="faq"><summary>L'IA envoie-t-elle mes dépenses quelque part ?</summary><p>Non. Le modèle est téléchargé une seule fois, puis il tourne sur votre téléphone. Vos questions et vos chiffres ne quittent pas l'appareil.</p></details>
+<details class="faq"><summary>Quelqu'un peut-il ouvrir l'app sur mon téléphone ?</summary><p>Vous pouvez la verrouiller avec votre empreinte ou le code de l'appareil. Sans cela, elle reste fermée.</p></details>
 <details class="faq"><summary>Est-ce disponible sur iPhone ?</summary><p>Pas pour l'instant : l'application est disponible sur Android.</p></details>
 <details class="faq"><summary>Dans quelle devise sont les montants ?</summary><p>En dirhams marocains (MAD).</p></details>
 </div>
@@ -1135,6 +1218,7 @@ TOTAL         342,80</div>
 <div class="wrap" style="padding-top: 112px; padding-bottom: 112px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px">
 <img src="assets/icon.png" alt="" style="width: 88px; height: 88px; border-radius: 22px; box-shadow: 0 20px 40px rgba(0,0,0,.4)">
 <h2 style="margin: 0; font-weight: 800; font-size: clamp(34px, 5vw, 60px); line-height: 1.02; letter-spacing: -0.03em; max-width: 760px">Reprenez la main sur votre budget. Sans rien céder.</h2>
+<p style="margin: -8px 0 0; color: #A9B3AE; font-size: 18px">Gratuit · Sans compte · 100 % hors ligne</p>
 <a class="badge" href="https://play.google.com/store/apps/details?id=com.mobenlamine.depensestracker" aria-label="Disponible sur Google Play"><img src="assets/badge-google-play-fr.png" alt="Disponible sur Google Play"></a>
 <a class="igcta" href="https://www.instagram.com/depenses_tracker/"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 512 512" width="18" height="18"><path fill="currentColor" d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z"/><path fill="currentColor" d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z"/></svg>Une fonctionnalité par jour sur Instagram : @depenses_tracker</a>
 </div>
@@ -1148,6 +1232,8 @@ TOTAL         342,80</div>
 </footer>
 
 </div>
+
+<a id="mcta" class="mcta" href="https://play.google.com/store/apps/details?id=com.mobenlamine.depensestracker"><img src="assets/icon.png" alt="" width="36" height="36"><span><b>Dépenses Tracker</b>Gratuit sur Google Play</span><em>Installer</em></a>
 
 <script>
 (function(){
@@ -1173,26 +1259,23 @@ TOTAL         342,80</div>
     document.querySelectorAll('[data-net]').forEach(function(e){e.textContent=on?'Indisponible':'Disponible';e.style.color=on?'#A22B23':'#0B6B47'});
     ml.textContent=on?'Rien n\u2019est envoyé':'Possible'});
 })();
-</script>
-<script>
+</script><script>
 (function(){
-  var hd=document.querySelector('.site-header');
-  function onScroll(){hd.classList.toggle('scrolled',window.scrollY>12)}
+  document.documentElement.classList.add('js');
+  var hdr=document.getElementById('hdr'),mb=document.getElementById('menuBtn'),mn=document.getElementById('mnav'),mc=document.getElementById('mcta');
+  function menu(o){mn.hidden=!o;mb.setAttribute('aria-expanded',String(o));mb.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu')}
+  mb.addEventListener('click',function(){menu(mn.hidden)});
+  mn.addEventListener('click',function(e){if(e.target.tagName==='A')menu(false)});
+  function onScroll(){var y=window.scrollY||document.documentElement.scrollTop;hdr.classList.toggle('solid',y>40);
+    var end=document.documentElement.scrollHeight-window.innerHeight-700;mc.classList.toggle('on',y>640&&y<end)}
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-  var mb=document.querySelector('.menu-btn'),nl=document.getElementById('navlinks');
-  mb.addEventListener('click',function(){var o=mb.getAttribute('aria-expanded')!=='true';mb.setAttribute('aria-expanded',String(o));nl.classList.toggle('open',o)});
-  nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mb.setAttribute('aria-expanded','false');nl.classList.remove('open')})});
-  document.querySelectorAll('#fonctions .fcard, .plan, #faq details, #confidentialite .net, #essayer .tabpick').forEach(function(e,i){e.classList.add('rv');e.style.transitionDelay=(i%3)*70+'ms'});
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if('IntersectionObserver' in window&&!reduce){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
-    document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
-  } else document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in')});
-  var v=document.getElementById('actVideo'),vs=document.getElementById('vSound');
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){v.play().catch(function(){})}else v.pause()})},{threshold:.4}).observe(v);
-  }
-  vs.addEventListener('click',function(){v.muted=false;v.loop=false;v.currentTime=0;v.controls=true;v.play();vs.setAttribute('aria-pressed','true')});
+  var sel='.h2,.lead,.promise,.tabpick,.bcard,.steps li,.fcard,.cmpwrap,.plan,.net,.serie,.story,.faq,.gauges';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  els.forEach(function(e){e.classList.add('rv');var sib=[].slice.call(e.parentNode.children).filter(function(c){return c.classList.contains('rv')||c===e});
+    e.style.setProperty('--d',Math.min(sib.indexOf(e),6)*70+'ms')});
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  els.forEach(function(e){io.observe(e)});
 })();
 </script>
 </body>
