@@ -1,99 +1,357 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dépenses Tracker – Politique de confidentialité</title>
-<link rel="icon" href="assets/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Politique de confidentialité – Dépenses Tracker</title>
+<meta name="description" content="Dépenses Tracker fonctionne hors ligne : vos dépenses, budgets et reçus restent sur votre téléphone. Pas de compte, pas de publicité, pas de serveur. Le détail de ce qui sort du téléphone, et quand.">
 <link rel="canonical" href="https://mobenlamine.github.io/depenses-tracker-site/confidentialite.html">
+<meta name="theme-color" content="#101614">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Politique de confidentialité – Dépenses Tracker">
+<meta property="og:description" content="Vos données restent sur votre téléphone. Le détail de ce qui en sort, et quand.">
+<meta property="og:url" content="https://mobenlamine.github.io/depenses-tracker-site/confidentialite.html">
+<meta property="og:image" content="https://mobenlamine.github.io/depenses-tracker-site/assets/og-image.jpg">
+<link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-:root{--bg:#fff;--fg:#1c1b1f;--mut:#5f6368;--ac:#0b7a5a;--bd:#e3e5e8}
-@media(prefers-color-scheme:dark){:root{--bg:#121212;--fg:#ececec;--mut:#a0a4a8;--ac:#4cc9a0;--bd:#2c2f33}}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:720px;margin:0 auto;padding:24px 16px 64px}
-h1{font-size:1.6rem;margin:.2em 0}h2{font-size:1.15rem;margin-top:1.8em;color:var(--ac)}
-p,li{color:var(--fg)}.mut{color:var(--mut);font-size:.9rem}
-nav a{display:inline-block;margin-right:12px;color:var(--ac);font-weight:600}
-section{border-top:1px solid var(--bd);margin-top:40px;padding-top:8px}
+@font-face{font-family:'Bricolage Grotesque';font-weight:500 800;font-stretch:100%;font-display:swap;src:url("assets/fonts/bricolage-grotesque-latin.woff2") format('woff2')}
+@font-face{font-family:'Figtree';font-weight:400 700;font-display:swap;src:url("assets/fonts/figtree-latin.woff2") format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-weight:500;font-display:swap;src:url("assets/fonts/ibm-plex-mono-500-latin.woff2") format('woff2')}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:#F5F3EE;color:#16201D;font:17px/1.65 'Figtree',system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+[lang="ar"]{font-family:'Figtree',"Noto Sans Arabic","Segoe UI",Tahoma,system-ui,sans-serif;line-height:1.9}
+a{color:#0E5A4C}a:hover{color:#063B30}
+:focus-visible{outline:3px solid #F2C14E;outline-offset:2px;border-radius:6px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.dark{color:#ECEFEC;background:radial-gradient(900px 700px at 85% 95%,rgba(14,90,76,.55),transparent 70%),#101614}
+/* barre du haut */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(16,22,20,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.07)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;color:#ECEFEC;text-decoration:none;font:700 19px 'Bricolage Grotesque',sans-serif;min-height:44px}
+.brand img{width:40px;height:40px;border-radius:11px}
+.brand:hover{color:#fff}
+.lang{display:flex;gap:4px;background:rgba(255,255,255,.08);border-radius:999px;padding:4px}
+.lang button{border:0;background:none;color:#A9B3AE;font:600 14px 'Figtree',system-ui,sans-serif;min-height:36px;padding:0 16px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:#F2C14E;color:#221A00}
+/* en-tête */
+.hero{padding-top:64px;padding-bottom:72px}
+.eyebrow{margin:0 0 16px;color:#F2C14E;font:500 13px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}
+[lang="ar"] .eyebrow{letter-spacing:0;font-family:inherit;font-weight:600}
+h1{margin:0 0 18px;font:800 clamp(36px,5.4vw,60px)/1.03 'Bricolage Grotesque',system-ui,sans-serif;letter-spacing:-.03em;max-width:820px}
+[lang="ar"] h1,[lang="ar"] h2,[lang="ar"] h3{font-family:inherit;letter-spacing:0;line-height:1.35}
+h1 em{font-style:normal;color:#7BE3B8}
+.hero p.lead{margin:0;max-width:640px;color:#C3CCC7;font-size:19px}
+.meta{margin:26px 0 0;color:#85908A;font-size:14px}
+/* cartes « en bref » */
+.brief{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;margin-top:-36px;position:relative}
+.bcard{background:#FFFFFF;border:1px solid #E2DED4;border-radius:20px;padding:22px;box-shadow:0 14px 34px rgba(16,22,20,.08)}
+.bcard .ico{width:44px;height:44px;border-radius:13px;background:#D8EAE3;color:#0E5A4C;display:grid;place-items:center;margin-bottom:14px}
+.bcard b{display:block;font:600 19px/1.25 'Bricolage Grotesque',system-ui,sans-serif;margin-bottom:4px}
+[lang="ar"] .bcard b{font-family:inherit;font-weight:700}
+.bcard span{color:#4F5A55;font-size:15px;line-height:1.5;display:block}
+/* corps */
+.cols{display:grid;grid-template-columns:240px minmax(0,1fr);gap:56px;padding:72px 0 96px;align-items:start}
+.toc{position:sticky;top:96px;font-size:15px}
+.toc p{margin:0 0 12px;color:#6B746F;font:500 12px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase}
+[lang="ar"] .toc p{font-family:inherit;letter-spacing:0;font-size:14px}
+.toc a{display:block;padding:7px 0 7px 14px;border-left:2px solid #E2DED4;color:#4F5A55;text-decoration:none;line-height:1.35}
+[dir="rtl"] .toc a{padding:7px 14px 7px 0;border-left:0;border-right:2px solid #E2DED4}
+.toc a:hover{color:#0E5A4C;border-color:#0E5A4C}
+article section{padding:0 0 44px}
+article section + section{border-top:1px solid #E2DED4;padding-top:44px}
+h2{margin:0 0 14px;font:700 clamp(24px,3vw,30px)/1.15 'Bricolage Grotesque',system-ui,sans-serif;letter-spacing:-.015em}
+h2 .n{display:inline-block;min-width:38px;color:#946000;font:500 15px 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.04em;vertical-align:middle}
+article p{margin:0 0 14px;color:#2B3531}
+article ul{margin:0 0 14px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+article li{background:#FFFFFF;border:1px solid #E2DED4;border-radius:16px;padding:14px 18px;color:#2B3531}
+article li strong{color:#16201D}
+.note{background:#F5E2C8;color:#4A3000;border-radius:16px;padding:14px 18px;font-size:16px}
+/* tableau des flux */
+.flows{width:100%;border-collapse:separate;border-spacing:0;background:#FFFFFF;border:1px solid #E2DED4;border-radius:18px;overflow:hidden;font-size:15.5px;margin:6px 0 16px}
+.flows th,.flows td{text-align:start;padding:14px 16px;vertical-align:top;border-top:1px solid #ECE9E1}
+.flows thead th{border-top:0;background:#FBFAF6;color:#4F5A55;font-weight:600;font-size:14px}
+.flows td:first-child{font-weight:600;color:#16201D}
+.tag{display:inline-block;padding:2px 10px;border-radius:999px;font:600 12.5px/1.7 'Figtree',system-ui,sans-serif;white-space:nowrap}
+[lang="ar"] .tag{font-family:inherit}
+.tag.never{background:#D8EAE3;color:#0B5A40}.tag.you{background:#F5E2C8;color:#6E4500}.tag.auto{background:#ECE9E1;color:#4F5A55}
+.contact{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;background:#0E5A4C;color:#fff;text-decoration:none;font-weight:700;direction:ltr}
+.contact:hover{background:#063B30;color:#fff}
+/* pied */
+footer{color:#85908A;font-size:14px}
+footer .wrap{padding-top:28px;padding-bottom:28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer a{color:#A9B3AE}
+footer p{margin:0;padding:0 24px 24px;text-align:center;font-size:12px;color:#6B746F}
+@media (max-width:860px){.cols{grid-template-columns:1fr;gap:28px;padding-top:48px}.toc{position:static;background:#FFFFFF;border:1px solid #E2DED4;border-radius:18px;padding:18px 20px}
+  .flows thead{display:none}.flows,.flows tbody,.flows tr,.flows td{display:block}.flows tr{border-top:1px solid #ECE9E1;padding:12px 0}.flows tr:first-child{border-top:0}.flows td{border:0;padding:4px 16px}}
+@media (max-width:480px){.brand span{display:none}.hero{padding-top:44px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{.topbar,.toc,footer,.lang{display:none}.dark{background:none;color:#000}h1 em{color:#000}.hero p.lead,.meta{color:#333}.brief{margin-top:0}.cols{display:block;padding:24px 0}[data-lang][hidden]{display:block!important}}
 </style>
 </head>
 <body>
-<main>
-<nav><a href="./">← Dépenses Tracker</a><a href="#fr">Français</a><a href="#ar">العربية</a></nav>
 
-<section id="fr" lang="fr" style="border:0;margin-top:8px">
-<h1>Politique de confidentialité – Dépenses Tracker</h1>
-<p class="mut">Dernière mise à jour : octobre 2026 · Éditeur : Mohammed Benlamine</p>
+<header class="topbar">
+<div class="wrap">
+<a class="brand" href="./" aria-label="Dépenses Tracker, retour à l'accueil"><img src="assets/icon.png" alt="" width="40" height="40"><span>Dépenses Tracker</span></a>
+<div class="lang" role="group" aria-label="Langue / اللغة">
+<button type="button" data-set="fr" aria-pressed="true">Français</button>
+<button type="button" data-set="ar" aria-pressed="false" lang="ar">العربية</button>
+</div>
+</div>
+</header>
 
-<h2>En bref</h2>
-<p>Dépenses Tracker fonctionne <strong>hors ligne</strong>. Vos transactions, budgets, objectifs et reçus restent <strong>uniquement sur votre téléphone</strong>. Il n’y a ni compte, ni publicité, ni outil de suivi publicitaire ou d’analyse. L’éditeur ne reçoit aucune de vos données.</p>
+<!-- ======================= FRANÇAIS ======================= -->
+<main id="fr" data-lang="fr" lang="fr">
+<div class="dark">
+<div class="wrap hero">
+<p class="eyebrow">Politique de confidentialité</p>
+<h1>Vos données restent <em>sur votre téléphone.</em></h1>
+<p class="lead">Dépenses Tracker fonctionne hors ligne. Il n'y a ni compte, ni publicité, ni serveur de l'éditeur. Cette page explique, sans jargon, ce qui est stocké, ce qui peut sortir du téléphone, et quand.</p>
+<p class="meta">Dernière mise à jour : novembre 2026 · Éditeur : Mohammed Benlamine</p>
+</div>
+</div>
 
-<h2>Données stockées sur votre appareil</h2>
-<p>Les données que vous saisissez (montants, catégories, notes, budgets, objectifs, photos de reçus) sont enregistrées dans une base de données locale de l’application. Elles ne sont pas envoyées à l’éditeur. La sauvegarde automatique Android est désactivée. Désinstaller l’application supprime ces données.</p>
+<div class="wrap">
+<div class="brief">
+<div class="bcard"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"><rect x="96" y="32" width="320" height="448" rx="48"/><path d="M224 416h64"/></svg></div><b>Tout est sur l'appareil</b><span>Dépenses, budgets, objectifs et reçus sont dans une base locale.</span></div>
+<div class="bcard"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"><circle cx="256" cy="176" r="88"/><path d="M96 448c16-88 80-136 160-136s144 48 160 136"/><path d="M80 80l352 352"/></svg></div><b>Aucun compte</b><span>Pas d'inscription, pas d'e-mail, pas de mot de passe.</span></div>
+<div class="bcard"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"><circle cx="256" cy="256" r="192"/><path d="M120 120l272 272"/></svg></div><b>Ni publicité, ni pistage</b><span>Aucun outil publicitaire, aucun outil de mesure d'audience.</span></div>
+<div class="bcard"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"><path d="M256 48l160 64v120c0 104-64 184-160 232-96-48-160-128-160-232V112z"/><path d="M192 256l48 48 88-104"/></svg></div><b>Internet seulement si vous le lancez</b><span>Sauvegarde Drive, modèle IA, achat Premium : rien d'autre.</span></div>
+</div>
 
-<h2>Autorisations</h2>
-<ul>
-<li><strong>Appareil photo</strong> : uniquement pour photographier un reçu. La lecture du texte se fait sur l’appareil.</li>
-<li><strong>Biométrie / code de l’appareil</strong> : uniquement pour verrouiller l’application. Vos empreintes ne sont jamais accessibles à l’application.</li>
-<li><strong>Notifications</strong> : rappels que vous programmez, générés localement.</li>
-<li><strong>Internet</strong> : uniquement pour les deux fonctions facultatives ci-dessous.</li>
-</ul>
+<div class="cols">
+<nav class="toc" aria-label="Sommaire">
+<p>Sommaire</p>
+<a href="#fr-stockage">1. Ce qui est stocké</a>
+<a href="#fr-flux">2. Ce qui peut sortir du téléphone</a>
+<a href="#fr-premium">3. Achat Premium</a>
+<a href="#fr-autorisations">4. Autorisations</a>
+<a href="#fr-google">5. Services Google intégrés</a>
+<a href="#fr-partage">6. Partage, vente, enfants</a>
+<a href="#fr-droits">7. Vos droits</a>
+<a href="#fr-contact">8. Modifications et contact</a>
+</nav>
 
-<h2>Connexions réseau (facultatives)</h2>
-<ul>
-<li><strong>Sauvegarde Google Drive</strong> : si vous la lancez, une copie de vos données est envoyée vers <em>votre</em> compte Google Drive, dans un fichier créé par l’application (autorisation « drive.file » : l’application ne voit pas vos autres fichiers). Elle est soumise à la <a href="https://policies.google.com/privacy">politique de Google</a>. L’éditeur n’y a pas accès. Sans action de votre part, rien n’est envoyé.</li>
-<li><strong>Téléchargement d’un modèle IA</strong> : si vous activez l’assistant IA, vous pouvez télécharger un modèle depuis <a href="https://huggingface.co/privacy">Hugging Face</a>. Seule une requête de téléchargement est faite ; aucune de vos données n’est envoyée. Ensuite, l’IA fonctionne entièrement sur votre téléphone.</li>
-</ul>
-
-<h2>Services Google intégrés</h2>
-<p>La reconnaissance de texte des reçus utilise Google ML Kit, exécutée sur l’appareil : le contenu de vos photos n’est pas envoyé. Selon la documentation de Google, ML Kit peut transmettre à Google des informations techniques (modèle de l’appareil, version d’Android, version de l’application, indicateurs de performance, identifiant d’installation non lié à votre identité) à des fins de diagnostic. Voir <a href="https://developers.google.com/ml-kit/android-data-disclosure">la déclaration de Google</a>.</p>
-
-<h2>Partage, vente, enfants</h2>
-<p>Aucune donnée n’est vendue ni partagée par l’éditeur. L’application ne s’adresse pas aux enfants de moins de 13 ans.</p>
-
-<h2>Vos droits</h2>
-<p>Vos données étant sur votre appareil, vous les contrôlez : modification, export (CSV) ou suppression depuis l’application, ou en la désinstallant. Les fichiers de sauvegarde Drive se suppriment depuis votre Google Drive.</p>
-
-<h2>Modifications et contact</h2>
-<p>Cette politique peut évoluer ; la date ci-dessus fait foi. Contact : <strong>mohammedbenlamine61@gmail.com</strong></p>
+<article>
+<section id="fr-stockage">
+<h2><span class="n">01</span>Ce qui est stocké sur votre appareil</h2>
+<p>Les données que vous saisissez (montants, catégories, comptes, notes, budgets, objectifs, rappels, photos de reçus) sont enregistrées dans une base de données locale de l'application. Elles ne sont pas envoyées à l'éditeur, qui n'a aucun serveur pour les recevoir.</p>
+<p>L'application garde aussi, sur le téléphone, vos réglages, le statut de l'achat Premium et le compteur de scans gratuits du mois.</p>
+<p class="note">La sauvegarde automatique d'Android est désactivée pour cette application. Si vous la désinstallez, ces données sont supprimées.</p>
 </section>
 
-<section id="ar" lang="ar" dir="rtl">
-<h1>سياسة الخصوصية – Dépenses Tracker</h1>
-<p class="mut">آخر تحديث: أكتوبر 2026 · الناشر: محمد بنلمين</p>
+<section id="fr-flux">
+<h2><span class="n">02</span>Ce qui peut sortir du téléphone</h2>
+<p>Sans action de votre part, aucune de vos données financières ne quitte l'appareil. Voici toutes les connexions possibles.</p>
+<table class="flows">
+<thead><tr><th scope="col">Connexion</th><th scope="col">Quand</th><th scope="col">Ce qui est transmis</th></tr></thead>
+<tbody>
+<tr><td>Dépenses, budgets, objectifs, reçus</td><td><span class="tag never">Jamais</span></td><td>Rien. Ces données restent dans la base locale.</td></tr>
+<tr><td>Sauvegarde Google Drive</td><td><span class="tag you">Si vous la lancez</span></td><td>Une copie de vos données, vers <em>votre</em> compte Google Drive, dans un fichier créé par l'application.</td></tr>
+<tr><td>Téléchargement d'un modèle IA</td><td><span class="tag you">Si vous le lancez</span></td><td>Une simple requête de téléchargement vers Hugging Face. Aucune de vos données.</td></tr>
+<tr><td>Achat et vérification de Premium</td><td><span class="tag you">Si vous achetez</span></td><td>L'achat passe par Google Play. Voir la section 3.</td></tr>
+<tr><td>Diagnostics de Google ML Kit</td><td><span class="tag auto">Possible</span></td><td>Des informations techniques, jamais vos photos ni vos montants. Voir la section 5.</td></tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Sauvegarde Google Drive.</strong> L'application utilise l'autorisation « drive.file » : elle ne voit que le fichier qu'elle a créé, pas vos autres fichiers. La sauvegarde est soumise à la <a href="https://policies.google.com/privacy">politique de confidentialité de Google</a>. L'éditeur n'y a pas accès.</li>
+<li><strong>Modèle IA.</strong> Si vous activez l'assistant IA, vous téléchargez une fois un modèle depuis <a href="https://huggingface.co/privacy">Hugging Face</a>. Ensuite, l'IA fonctionne entièrement sur votre téléphone : vos questions et vos chiffres ne sont envoyés nulle part.</li>
+</ul>
+</section>
 
-<h2>باختصار</h2>
-<p>يعمل تطبيق Dépenses Tracker <strong>دون إنترنت</strong>. تبقى معاملاتك وميزانياتك وأهدافك وإيصالاتك <strong>على هاتفك فقط</strong>. لا يوجد حساب ولا إعلانات ولا أدوات تتبّع أو تحليلات. لا يتلقى الناشر أيّ بيانات منك.</p>
+<section id="fr-premium">
+<h2><span class="n">03</span>Achat Premium</h2>
+<p>Premium est un achat unique, facultatif. Le paiement est traité par <strong>Google Play</strong>, avec votre compte Google, selon la <a href="https://policies.google.com/privacy">politique de confidentialité de Google</a>.</p>
+<ul>
+<li><strong>Ce que l'application fait.</strong> Elle interroge Google Play pour savoir si l'achat est valide : au démarrage, quand vous revenez dans l'application et quand vous touchez « Restaurer ». Le statut Premium est ensuite gardé sur le téléphone, pour que Premium fonctionne hors ligne.</li>
+<li><strong>Ce que l'éditeur voit.</strong> L'application ne lit ni votre carte bancaire ni vos coordonnées de paiement. L'éditeur consulte seulement, dans la console Google Play, les informations de commande que Google met à sa disposition, comme le numéro de commande et l'état de l'achat.</li>
+<li><strong>Ce qui n'est pas transmis.</strong> Vos dépenses, budgets et reçus ne sont jamais liés à l'achat ni envoyés à Google à cette occasion.</li>
+</ul>
+</section>
 
-<h2>البيانات المخزّنة على جهازك</h2>
-<p>تُحفظ البيانات التي تدخلها (المبالغ، الفئات، الملاحظات، الميزانيات، الأهداف، صور الإيصالات) في قاعدة بيانات محلية داخل التطبيق، ولا تُرسل إلى الناشر. النسخ الاحتياطي التلقائي لأندرويد معطّل. حذف التطبيق يحذف هذه البيانات.</p>
+<section id="fr-autorisations">
+<h2><span class="n">04</span>Autorisations demandées</h2>
+<ul>
+<li><strong>Appareil photo</strong> : uniquement pour photographier un reçu. La lecture du texte se fait sur l'appareil.</li>
+<li><strong>Biométrie ou code de l'appareil</strong> : uniquement pour verrouiller l'application. Vos empreintes ne sont jamais accessibles à l'application.</li>
+<li><strong>Notifications</strong> : pour les rappels et les alertes de budget, créés sur le téléphone.</li>
+<li><strong>Internet</strong> : uniquement pour la sauvegarde Google Drive, le téléchargement d'un modèle IA et l'achat Premium.</li>
+<li><strong>Facturation Google Play</strong> : pour proposer l'achat Premium.</li>
+</ul>
+<p>L'application ne demande ni votre position, ni vos contacts, ni le micro, ni l'accès à vos fichiers.</p>
+</section>
 
-<h2>الأذونات</h2>
+<section id="fr-google">
+<h2><span class="n">05</span>Services Google intégrés</h2>
+<p>La lecture des reçus utilise Google ML Kit, exécuté sur l'appareil : le contenu de vos photos n'est pas envoyé. Selon la documentation de Google, ML Kit peut transmettre à Google des informations techniques (modèle de l'appareil, version d'Android, version de l'application, indicateurs de performance, identifiant d'installation non lié à votre identité) à des fins de diagnostic. Le détail est dans <a href="https://developers.google.com/ml-kit/android-data-disclosure">la déclaration de Google</a>.</p>
+</section>
+
+<section id="fr-partage">
+<h2><span class="n">06</span>Partage, vente, enfants</h2>
+<p>L'éditeur ne vend aucune donnée et n'en partage aucune, puisqu'il n'en reçoit pas. L'application ne s'adresse pas aux enfants de moins de 13 ans.</p>
+</section>
+
+<section id="fr-droits">
+<h2><span class="n">07</span>Vos droits</h2>
+<p>Vos données sont sur votre appareil : c'est vous qui les contrôlez.</p>
+<ul>
+<li><strong>Modifier ou supprimer</strong> : à tout moment, depuis l'application.</li>
+<li><strong>Tout effacer</strong> : en désinstallant l'application.</li>
+<li><strong>Exporter</strong> : l'export et la sauvegarde font partie de Premium.</li>
+<li><strong>Sauvegardes Drive</strong> : elles se suppriment depuis votre Google Drive.</li>
+<li><strong>Achat</strong> : les remboursements se demandent auprès de Google Play.</li>
+</ul>
+</section>
+
+<section id="fr-contact">
+<h2><span class="n">08</span>Modifications et contact</h2>
+<p>Cette politique peut évoluer, par exemple quand une fonction est ajoutée. La date indiquée en haut de la page fait foi. Pour toute question sur vos données, écrivez à l'éditeur :</p>
+<p><a class="contact" href="mailto:mohammedbenlamine61@gmail.com">mohammedbenlamine61@gmail.com</a></p>
+</section>
+</article>
+</div>
+</div>
+</main>
+
+<!-- ======================= العربية ======================= -->
+<main id="ar" data-lang="ar" lang="ar" dir="rtl">
+<div class="dark">
+<div class="wrap hero">
+<p class="eyebrow">سياسة الخصوصية</p>
+<h1>بياناتك تبقى <em>على هاتفك.</em></h1>
+<p class="lead">يعمل تطبيق Dépenses Tracker دون إنترنت. لا يوجد حساب ولا إعلانات ولا خادم لدى الناشر. تشرح هذه الصفحة ببساطة ما الذي يُخزَّن، وما الذي قد يخرج من الهاتف، ومتى.</p>
+<p class="meta">آخر تحديث: نونبر 2026 · الناشر: محمد بنلمين</p>
+</div>
+</div>
+
+<div class="wrap">
+<div class="brief">
+<div class="bcard"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"><rect x="96" y="32" width="320" height="448" rx="48"/><path d="M224 416h64"/></svg></div><b>كل شيء على الجهاز</b><span>المصاريف والميزانيات والأهداف والإيصالات في قاعدة بيانات محلية.</span></div>
+<div class="bcard"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"><circle cx="256" cy="176" r="88"/><path d="M96 448c16-88 80-136 160-136s144 48 160 136"/><path d="M80 80l352 352"/></svg></div><b>بدون حساب</b><span>لا تسجيل ولا بريد إلكتروني ولا كلمة سر.</span></div>
+<div class="bcard"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"><circle cx="256" cy="256" r="192"/><path d="M120 120l272 272"/></svg></div><b>لا إعلانات ولا تتبّع</b><span>لا أدوات إعلانية ولا أدوات لقياس الاستخدام.</span></div>
+<div class="bcard"><div class="ico"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"><path d="M256 48l160 64v120c0 104-64 184-160 232-96-48-160-128-160-232V112z"/><path d="M192 256l48 48 88-104"/></svg></div><b>الإنترنت فقط إذا بدأته أنت</b><span>نسخ Drive الاحتياطي، نموذج الذكاء الاصطناعي، شراء Premium: لا شيء غير ذلك.</span></div>
+</div>
+
+<div class="cols">
+<nav class="toc" aria-label="الفهرس">
+<p>الفهرس</p>
+<a href="#ar-stockage">1. ما الذي يُخزَّن</a>
+<a href="#ar-flux">2. ما الذي قد يخرج من الهاتف</a>
+<a href="#ar-premium">3. شراء Premium</a>
+<a href="#ar-autorisations">4. الأذونات</a>
+<a href="#ar-google">5. خدمات Google المدمجة</a>
+<a href="#ar-partage">6. المشاركة والبيع والأطفال</a>
+<a href="#ar-droits">7. حقوقك</a>
+<a href="#ar-contact">8. التعديلات والتواصل</a>
+</nav>
+
+<article>
+<section id="ar-stockage">
+<h2><span class="n">01</span>ما الذي يُخزَّن على جهازك</h2>
+<p>تُحفظ البيانات التي تدخلها (المبالغ، الفئات، الحسابات، الملاحظات، الميزانيات، الأهداف، التذكيرات، صور الإيصالات) في قاعدة بيانات محلية داخل التطبيق. لا تُرسل إلى الناشر، وليس لديه أيّ خادم لاستقبالها.</p>
+<p>يحتفظ التطبيق أيضاً على الهاتف بإعداداتك، وبحالة شراء Premium، وبعدّاد عمليات المسح المجانية للشهر.</p>
+<p class="note">النسخ الاحتياطي التلقائي لأندرويد معطّل لهذا التطبيق. إذا حذفت التطبيق تُحذف هذه البيانات.</p>
+</section>
+
+<section id="ar-flux">
+<h2><span class="n">02</span>ما الذي قد يخرج من الهاتف</h2>
+<p>دون تدخّل منك، لا تغادر أيّ من بياناتك المالية الجهاز. هذه كل الاتصالات الممكنة.</p>
+<table class="flows">
+<thead><tr><th scope="col">الاتصال</th><th scope="col">متى</th><th scope="col">ما الذي يُرسل</th></tr></thead>
+<tbody>
+<tr><td>المصاريف، الميزانيات، الأهداف، الإيصالات</td><td><span class="tag never">أبداً</span></td><td>لا شيء. تبقى هذه البيانات في القاعدة المحلية.</td></tr>
+<tr><td>النسخ الاحتياطي على Google Drive</td><td><span class="tag you">إذا بدأته أنت</span></td><td>نسخة من بياناتك إلى حسابك <em>أنت</em> في Google Drive، داخل ملف ينشئه التطبيق.</td></tr>
+<tr><td>تنزيل نموذج الذكاء الاصطناعي</td><td><span class="tag you">إذا بدأته أنت</span></td><td>طلب تنزيل فقط من Hugging Face. لا شيء من بياناتك.</td></tr>
+<tr><td>شراء Premium والتحقق منه</td><td><span class="tag you">إذا اشتريت</span></td><td>يتم الشراء عبر Google Play. انظر القسم 3.</td></tr>
+<tr><td>تشخيصات Google ML Kit</td><td><span class="tag auto">ممكن</span></td><td>معلومات تقنية، وليس صورك ولا مبالغك أبداً. انظر القسم 5.</td></tr>
+</tbody>
+</table>
+<ul>
+<li><strong>النسخ الاحتياطي على Google Drive.</strong> يستخدم التطبيق إذن «drive.file»: يرى فقط الملف الذي أنشأه، ولا يرى بقية ملفاتك. يخضع النسخ الاحتياطي <a href="https://policies.google.com/privacy">لسياسة خصوصية Google</a>. لا يملك الناشر أيّ وصول إليه.</li>
+<li><strong>نموذج الذكاء الاصطناعي.</strong> إذا فعّلت المساعد الذكي تنزّل نموذجاً مرة واحدة من <a href="https://huggingface.co/privacy">Hugging Face</a>. بعد ذلك يعمل الذكاء الاصطناعي بالكامل على هاتفك: لا تُرسل أسئلتك ولا أرقامك إلى أيّ مكان.</li>
+</ul>
+</section>
+
+<section id="ar-premium">
+<h2><span class="n">03</span>شراء Premium</h2>
+<p>Premium شراء اختياري يُدفع مرة واحدة. تتم معالجة الدفع عبر <strong>Google Play</strong> بحسابك في Google، وفق <a href="https://policies.google.com/privacy">سياسة خصوصية Google</a>.</p>
+<ul>
+<li><strong>ما يفعله التطبيق.</strong> يسأل Google Play هل الشراء صالح: عند فتح التطبيق، وعند العودة إليه، وعند الضغط على «استعادة». بعد ذلك تُحفظ حالة Premium على الهاتف ليعمل Premium دون إنترنت.</li>
+<li><strong>ما يراه الناشر.</strong> لا يقرأ التطبيق بطاقتك البنكية ولا بيانات الدفع. يطّلع الناشر فقط، في لوحة Google Play، على معلومات الطلب التي تتيحها Google، مثل رقم الطلب وحالة الشراء.</li>
+<li><strong>ما لا يُرسل.</strong> لا تُربط مصاريفك وميزانياتك وإيصالاتك بالشراء أبداً، ولا تُرسل إلى Google بهذه المناسبة.</li>
+</ul>
+</section>
+
+<section id="ar-autorisations">
+<h2><span class="n">04</span>الأذونات المطلوبة</h2>
 <ul>
 <li><strong>الكاميرا</strong>: لتصوير الإيصال فقط. تتم قراءة النص على الجهاز.</li>
-<li><strong>البصمة / رمز الجهاز</strong>: لقفل التطبيق فقط. لا يمكن للتطبيق الوصول إلى بصماتك.</li>
-<li><strong>الإشعارات</strong>: تذكيرات تضبطها أنت وتُنشأ محلياً.</li>
-<li><strong>الإنترنت</strong>: للميزتين الاختياريتين أدناه فقط.</li>
+<li><strong>البصمة أو رمز الجهاز</strong>: لقفل التطبيق فقط. لا يمكن للتطبيق الوصول إلى بصماتك.</li>
+<li><strong>الإشعارات</strong>: للتذكيرات وتنبيهات الميزانية، وتُنشأ على الهاتف.</li>
+<li><strong>الإنترنت</strong>: فقط للنسخ الاحتياطي على Google Drive، وتنزيل نموذج الذكاء الاصطناعي، وشراء Premium.</li>
+<li><strong>الفوترة عبر Google Play</strong>: لعرض شراء Premium.</li>
 </ul>
-
-<h2>الاتصال بالإنترنت (اختياري)</h2>
-<ul>
-<li><strong>النسخ الاحتياطي على Google Drive</strong>: إذا بدأته بنفسك، تُرسل نسخة من بياناتك إلى حسابك <em>أنت</em> في Google Drive داخل ملف ينشئه التطبيق (إذن «drive.file»: لا يرى التطبيق بقية ملفاتك). يخضع ذلك <a href="https://policies.google.com/privacy">لسياسة Google</a>. لا يملك الناشر أيّ وصول إليه. دون تدخّلك لا يُرسل شيء.</li>
-<li><strong>تنزيل نموذج الذكاء الاصطناعي</strong>: إذا فعّلت المساعد الذكي يمكنك تنزيل نموذج من <a href="https://huggingface.co/privacy">Hugging Face</a>. هو طلب تنزيل فقط ولا تُرسل أيّ بيانات منك. بعد ذلك يعمل الذكاء الاصطناعي بالكامل على هاتفك.</li>
-</ul>
-
-<h2>خدمات Google المدمجة</h2>
-<p>تستخدم قراءة النصوص من الإيصالات Google ML Kit وتعمل على الجهاز: لا يُرسل محتوى صورك. وفق وثائق Google، قد يرسل ML Kit إلى Google معلومات تقنية (طراز الجهاز، إصدار أندرويد، إصدار التطبيق، مؤشرات الأداء، معرّف تثبيت غير مرتبط بهويتك) لأغراض التشخيص. انظر <a href="https://developers.google.com/ml-kit/android-data-disclosure">إفصاح Google</a>.</p>
-
-<h2>المشاركة والبيع والأطفال</h2>
-<p>لا يبيع الناشر أيّ بيانات ولا يشاركها. التطبيق غير موجّه للأطفال دون 13 عاماً.</p>
-
-<h2>حقوقك</h2>
-<p>بياناتك على جهازك وأنت تتحكم بها: التعديل أو التصدير (CSV) أو الحذف من التطبيق أو بحذفه. تُحذف ملفات النسخ الاحتياطي من Google Drive الخاص بك.</p>
-
-<h2>التعديلات والتواصل</h2>
-<p>قد تتغير هذه السياسة؛ والتاريخ أعلاه هو المرجع. للتواصل: <strong>mohammedbenlamine61@gmail.com</strong></p>
+<p>لا يطلب التطبيق موقعك ولا جهات اتصالك ولا الميكروفون ولا الوصول إلى ملفاتك.</p>
 </section>
+
+<section id="ar-google">
+<h2><span class="n">05</span>خدمات Google المدمجة</h2>
+<p>تستخدم قراءة الإيصالات Google ML Kit وتعمل على الجهاز: لا يُرسل محتوى صورك. وفق وثائق Google، قد يرسل ML Kit إلى Google معلومات تقنية (طراز الجهاز، إصدار أندرويد، إصدار التطبيق، مؤشرات الأداء، معرّف تثبيت غير مرتبط بهويتك) لأغراض التشخيص. التفاصيل في <a href="https://developers.google.com/ml-kit/android-data-disclosure">إفصاح Google</a>.</p>
+</section>
+
+<section id="ar-partage">
+<h2><span class="n">06</span>المشاركة والبيع والأطفال</h2>
+<p>لا يبيع الناشر أيّ بيانات ولا يشاركها، لأنه لا يتلقى أيّ بيانات. التطبيق غير موجّه للأطفال دون 13 عاماً.</p>
+</section>
+
+<section id="ar-droits">
+<h2><span class="n">07</span>حقوقك</h2>
+<p>بياناتك على جهازك، وأنت من يتحكم بها.</p>
+<ul>
+<li><strong>التعديل أو الحذف</strong>: في أيّ وقت من داخل التطبيق.</li>
+<li><strong>حذف كل شيء</strong>: بحذف التطبيق.</li>
+<li><strong>التصدير</strong>: التصدير والنسخ الاحتياطي ضمن Premium.</li>
+<li><strong>نسخ Drive الاحتياطية</strong>: تُحذف من Google Drive الخاص بك.</li>
+<li><strong>الشراء</strong>: تُطلب استرجاعات المبالغ من Google Play.</li>
+</ul>
+</section>
+
+<section id="ar-contact">
+<h2><span class="n">08</span>التعديلات والتواصل</h2>
+<p>قد تتغير هذه السياسة، مثلاً عند إضافة ميزة جديدة. التاريخ المذكور أعلى الصفحة هو المرجع. لأيّ سؤال عن بياناتك راسل الناشر:</p>
+<p><a class="contact" href="mailto:mohammedbenlamine61@gmail.com">mohammedbenlamine61@gmail.com</a></p>
+</section>
+</article>
+</div>
+</div>
 </main>
+
+<footer class="dark">
+<div class="wrap">
+<span>© 2026 Mohammed Benlamine · Dépenses Tracker</span>
+<span style="display:flex;gap:24px;flex-wrap:wrap"><a href="./">Accueil</a><a href="https://www.instagram.com/depenses_tracker/">Instagram</a><a href="https://play.google.com/store/apps/details?id=com.mobenlamine.depensestracker">Google Play</a></span>
+</div>
+<p>Google Play, Google Drive et Android sont des marques de Google LLC.</p>
+</footer>
+
+<script>
+(function(){
+  var mains=document.querySelectorAll('[data-lang]'),btns=document.querySelectorAll('[data-set]');
+  function set(l,scroll){
+    mains.forEach(function(m){m.hidden=m.dataset.lang!==l});
+    btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.set===l))});
+    document.documentElement.lang=l;
+    if(scroll)window.scrollTo(0,0);
+  }
+  function fromHash(){var h=location.hash.slice(1);return h.indexOf('ar')===0?'ar':'fr'}
+  btns.forEach(function(b){b.addEventListener('click',function(){history.replaceState(null,'','#'+b.dataset.set);set(b.dataset.set,true)})});
+  window.addEventListener('hashchange',function(){set(fromHash(),false);var t=document.getElementById(location.hash.slice(1));if(t)t.scrollIntoView()});
+  set(fromHash(),false);
+  if(location.hash.length>3){var t=document.getElementById(location.hash.slice(1));if(t)t.scrollIntoView()}
+})();
+</script>
 </body>
 </html>
